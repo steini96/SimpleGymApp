@@ -1,5 +1,6 @@
 package com.example.simplegymapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,7 @@ public class SecondFragment extends Fragment {
 
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
+
         return binding.getRoot();
 
     }
