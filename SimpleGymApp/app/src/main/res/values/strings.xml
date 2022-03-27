@@ -11,4 +11,5 @@
 
     <string name="hello_first_fragment">Welcome to SimpleGym!</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="button">GO TO USER INFO</string>
 </resources>

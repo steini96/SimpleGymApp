@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Steini/Documents/Gitlab/SimpleGymApp/SimpleGymApp/app/src/main/res/layout/activity_main.xml" value="0.1875" />
-        <entry key="..\:/Users/Steini/Documents/Gitlab/SimpleGymApp/SimpleGymApp/app/src/main/res/layout/fragment_first.xml" value="0.1" />
-        <entry key="..\:/Users/Steini/Documents/Gitlab/SimpleGymApp/SimpleGymApp/app/src/main/res/layout/fragment_second.xml" value="0.1" />
+        <entry key="..\:/Users/Tristan/OneDrive/Documents/GitHub/SimpleGymApp/SimpleGymApp/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Tristan/OneDrive/Documents/GitHub/SimpleGymApp/SimpleGymApp/app/src/main/res/layout/content_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Tristan/OneDrive/Documents/GitHub/SimpleGymApp/SimpleGymApp/app/src/main/res/layout/fragment_first.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Tristan/OneDrive/Documents/GitHub/SimpleGymApp/SimpleGymApp/app/src/main/res/layout/fragment_second.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Tristan/OneDrive/Documents/GitHub/SimpleGymApp/SimpleGymApp/app/src/main/res/layout/userinfo.xml" value="0.29528985507246375" />
       </map>
     </option>
   </component>

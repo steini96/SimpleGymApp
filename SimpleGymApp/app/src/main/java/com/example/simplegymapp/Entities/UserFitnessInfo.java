@@ -57,6 +57,11 @@ public class UserFitnessInfo {
         this.difficulty = difficulty;
     }
 
+    @Override
+    public String toString() {
+        return "Workout á viku: " + this.numWeeklyWrkOut+ "\n" + "Gerð á workout: " + this.workoutType + "\n" + "Erfiðleiki: " + this.difficulty;
+    }
+
 
     public List<Workout> getWorkouts() {
         return workouts;

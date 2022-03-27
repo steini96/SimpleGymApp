@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/first_fragment_to_userInfo_fragment"
+            app:destination="@id/userInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -23,6 +26,14 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.example.simplegymapp.UserInfoFragment"
+        android:label="UserInfoFragment" >
+        <action
+            android:id="@+id/userInfo_to_first_fragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
