@@ -11,7 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.simplegymapp.Entities.Exercise;
+import com.example.simplegymapp.Entities.Workout;
 import com.example.simplegymapp.databinding.FragmentSecondBinding;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class SecondFragment extends Fragment {
 
@@ -20,6 +26,7 @@ public class SecondFragment extends Fragment {
     // Array of strings...
     ListView simpleList;
     String countryList[] = {"India", "China", "australia", "Portugle", "America", "NewZealand"};
+    List<Exercise> list=new ArrayList<Exercise>();
 
     @Override
     public View onCreateView(
@@ -47,7 +54,20 @@ public class SecondFragment extends Fragment {
         });
 
         simpleList = (ListView)getView().findViewById(R.id.simpleListView);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, countryList);
+
+        Workout work1 = new Workout();
+        Exercise ex1 = new Exercise("Synda", 400, " m á 14min", work1);
+        Exercise ex2 = new Exercise("Hlaupa", 5, " km á 14min", work1);
+        Exercise ex3 = new Exercise("Armbeygjur", 4, "20 stykki á 14min", work1);
+        Exercise ex4 = new Exercise("Hnébeygjur", 4, "20 stykki  á 14min", work1);
+
+        list.add(ex1);
+        list.add(ex2);
+        list.add(ex3);
+        list.add(ex4);
+        Object[] exArray = list.toArray();
+
+        ArrayAdapter<Exercise> arrayAdapter = new ArrayAdapter<Exercise>(getActivity(), android.R.layout.simple_list_item_1, list);
 
             // new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textView, android.R.layout.simple_list_item_1);
 

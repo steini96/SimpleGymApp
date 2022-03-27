@@ -29,6 +29,10 @@ public class Exercise {
         this.duration = duration;
     }
 
+    @Override
+    public String toString() {
+        return this.exerciseName + "  " + this.repetitions + " ferðir á " + this.duration;
+    }
 
 
     public long getID() {
