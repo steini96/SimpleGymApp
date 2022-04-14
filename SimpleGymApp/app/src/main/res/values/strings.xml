@@ -4,6 +4,8 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">SimpleGym</string>
     <string name="second_fragment_label">Workout</string>
+    <string name="login_fragment_label">Login/Register</string>
+    <string name="userinfo_label">User Info</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="home">Home</string>
@@ -12,4 +14,10 @@
     <string name="hello_first_fragment">Welcome to SimpleGym!</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="button">GO TO USER INFO</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

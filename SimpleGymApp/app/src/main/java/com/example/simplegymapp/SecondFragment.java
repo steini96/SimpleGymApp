@@ -26,7 +26,7 @@ public class SecondFragment extends Fragment {
 
     // Array of strings...
     ListView simpleList;
-    String countryList[] = {"India", "China", "australia", "Portugle", "America", "NewZealand"};
+    String countryList[] = {"India", "China", "australia", "Portugal", "America", "NewZealand"};
     List<Exercise> list=new ArrayList<Exercise>();
 
     @Override
