@@ -58,8 +58,18 @@ public class FirstFragment extends Fragment {
         binding.buttonUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.first_fragment_to_userInfo_fragment);
+                UserInfoFragment userInfoFragment = new UserInfoFragment ();
+                Bundle args = new Bundle();
+                args.putString("key", "value");
+                userInfoFragment.setArguments(args);
+
+                //Inflate the fragment
+                int id = FirstFragment.this.getId();
+                FragmentTransaction trans = getParentFragmentManager().beginTransaction();
+                trans.replace(id, userInfoFragment).commit();
+//
+//                NavHostFragment.findNavController(FirstFragment.this)
+//                        .navigate(R.id.first_fragment_to_userInfo_fragment);
             }
         });
     }
