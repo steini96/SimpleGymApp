@@ -55,6 +55,38 @@ public class FirstFragment extends Fragment {
             }
         });
 
+        binding.buttonFirstRun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SecondFragment secondFragment = new SecondFragment ();
+                Bundle args = new Bundle();
+                args.putString("workoutType", "run");
+                secondFragment.setArguments(args);
+
+                //Inflate the fragment
+                int id = FirstFragment.this.getId();
+                FragmentTransaction trans = getParentFragmentManager().beginTransaction();
+                trans.replace(id, secondFragment).commit();
+
+            }
+        });
+
+        binding.buttonFirstLift.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SecondFragment secondFragment = new SecondFragment ();
+                Bundle args = new Bundle();
+                args.putString("workoutType", "lift");
+                secondFragment.setArguments(args);
+
+                //Inflate the fragment
+                int id = FirstFragment.this.getId();
+                FragmentTransaction trans = getParentFragmentManager().beginTransaction();
+                trans.replace(id, secondFragment).commit();
+
+            }
+        });
+
         binding.buttonUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

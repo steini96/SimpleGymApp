@@ -9,7 +9,9 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="home">Home</string>
-    <string name="first_fragment_button_text">Go to workout</string>
+    <string name="first_fragment_button_run">Run workout</string>
+    <string name="first_fragment_button_swim">Swim workout</string>
+    <string name="first_fragment_button_lift">Weight lift workout</string>
 
     <string name="hello_first_fragment">Welcome to SimpleGym!</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
