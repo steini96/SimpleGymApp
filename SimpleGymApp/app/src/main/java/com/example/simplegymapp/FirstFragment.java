@@ -28,7 +28,7 @@ public class FirstFragment extends Fragment {
 
         // Svona setur maður nýtt difficulty
         SharedPreferences.Editor editor = sh.edit();
-        editor.putString("difficulty", "Hard");
+        editor.putString("difficulty", "hard");
         editor.commit();
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
