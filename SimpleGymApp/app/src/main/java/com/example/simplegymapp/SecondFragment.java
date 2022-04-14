@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.simplegymapp.Entities.Exercise;
@@ -55,8 +56,15 @@ public class SecondFragment extends Fragment {
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                FirstFragment firstFragment = new FirstFragment ();
+                Bundle args = new Bundle();
+                args.putString("key", "value");
+                firstFragment.setArguments(args);
+
+                //Inflate the fragment
+                int id = SecondFragment.this.getId();
+                FragmentTransaction trans = getParentFragmentManager().beginTransaction();
+                trans.replace(id, firstFragment).commit();
             }
         });
 
