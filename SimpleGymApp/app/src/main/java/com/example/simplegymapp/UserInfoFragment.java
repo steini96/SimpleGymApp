@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.simplegymapp.Entities.Difficulty;
@@ -54,8 +55,17 @@ public class UserInfoFragment  extends Fragment {
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(UserInfoFragment.this)
-                        .navigate(R.id.userInfo_to_first_fragment);
+//                NavHostFragment.findNavController(UserInfoFragment.this)
+//                        .navigate(R.id.userInfo_to_first_fragment);
+                FirstFragment firstFragment = new FirstFragment ();
+                Bundle args = new Bundle();
+                args.putString("key", "value");
+                firstFragment.setArguments(args);
+
+                //Inflate the fragment
+                int id = UserInfoFragment.this.getId();
+                FragmentTransaction trans = getParentFragmentManager().beginTransaction();
+                trans.replace(id, firstFragment).commit();
             }
         });
 
