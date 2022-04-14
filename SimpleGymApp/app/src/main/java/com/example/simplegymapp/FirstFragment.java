@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.simplegymapp.databinding.FragmentFirstBinding;
@@ -32,8 +33,18 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+//                NavHostFragment.findNavController(FirstFragment.this)
+//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                SecondFragment secondFragment = new SecondFragment ();
+                Bundle args = new Bundle();
+                args.putString("Lykill", "Skilaboð");
+                secondFragment.setArguments(args);
+
+                //Inflate the fragment
+                int id = FirstFragment.this.getId();
+                FragmentTransaction trans = getParentFragmentManager().beginTransaction();
+                trans.replace(id, secondFragment).commit();
+
             }
         });
         binding.buttonUserInfo.setOnClickListener(new View.OnClickListener() {

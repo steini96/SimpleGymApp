@@ -38,6 +38,8 @@ public class SecondFragment extends Fragment {
 
 
 
+
+
         binding = FragmentSecondBinding.inflate(inflater, container, false);
 
         return binding.getRoot();
@@ -55,10 +57,14 @@ public class SecondFragment extends Fragment {
             }
         });
 
+        String value = getArguments().getString("Lykill");
+
+        System.out.println(value);
+
         simpleList = (ListView)getView().findViewById(R.id.simpleListView);
 
         Workout work1 = new Workout();
-        Exercise ex1 = new Exercise("Synda", 400, " m á 14min", work1);
+        Exercise ex1 = new Exercise(value, 400, " m á 14min", work1);
         Exercise ex2 = new Exercise("Hlaupa", 5, " km á 14min", work1);
         Exercise ex3 = new Exercise("Armbeygjur", 4, "20 stykki á 14min", work1);
         Exercise ex4 = new Exercise("Hnébeygjur", 4, "20 stykki  á 14min", work1);
