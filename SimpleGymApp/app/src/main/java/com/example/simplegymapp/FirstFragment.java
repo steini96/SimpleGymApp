@@ -28,7 +28,7 @@ public class FirstFragment extends Fragment {
 
         // Svona setur maður nýtt difficulty
         SharedPreferences.Editor editor = sh.edit();
-        editor.putString("difficulty", "Hard");
+        editor.putString("difficulty", "hard");
         editor.commit();
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
@@ -45,6 +45,38 @@ public class FirstFragment extends Fragment {
                 SecondFragment secondFragment = new SecondFragment ();
                 Bundle args = new Bundle();
                 args.putString("workoutType", "swim");
+                secondFragment.setArguments(args);
+
+                //Inflate the fragment
+                int id = FirstFragment.this.getId();
+                FragmentTransaction trans = getParentFragmentManager().beginTransaction();
+                trans.replace(id, secondFragment).commit();
+
+            }
+        });
+
+        binding.buttonFirstRun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SecondFragment secondFragment = new SecondFragment ();
+                Bundle args = new Bundle();
+                args.putString("workoutType", "run");
+                secondFragment.setArguments(args);
+
+                //Inflate the fragment
+                int id = FirstFragment.this.getId();
+                FragmentTransaction trans = getParentFragmentManager().beginTransaction();
+                trans.replace(id, secondFragment).commit();
+
+            }
+        });
+
+        binding.buttonFirstLift.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SecondFragment secondFragment = new SecondFragment ();
+                Bundle args = new Bundle();
+                args.putString("workoutType", "lift");
                 secondFragment.setArguments(args);
 
                 //Inflate the fragment

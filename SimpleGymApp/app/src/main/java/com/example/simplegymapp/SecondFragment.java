@@ -68,45 +68,33 @@ public class SecondFragment extends Fragment {
             }
         });
 
-        String difficulty = "hard";
+        SharedPreferences sh = this.getActivity().getSharedPreferences("MySharedPref",0);
+        String difficulty = sh.getString("difficulty", "");
+
         String workoutType = getArguments().getString("workoutType");
 
-        System.out.println(workoutType);
-
+        // Define list
         simpleList = (ListView)getView().findViewById(R.id.simpleListView);
 
-        /*
-        Workout work1 = new Workout();
-        Exercise ex1 = new Exercise(value, 400, " m á 14min", work1);
-        Exercise ex2 = new Exercise("Hlaupa", 5, " km á 14min", work1);
-        Exercise ex3 = new Exercise("Armbeygjur", 4, "20 stykki á 14min", work1);
-        Exercise ex4 = new Exercise("Hnébeygjur", 4, "20 stykki  á 14min", work1);
-        */
-
-
+        // Define the exercises
         Exercise e1 = new Exercise("Push ups", "5 times");
         Exercise e2 = new Exercise("Push ups", "10 times");
         Exercise e3 = new Exercise("Push ups", "20 times");
-
         Exercise e4 = new Exercise("Jog", "1 km");
         Exercise e5 = new Exercise("Jog", "5 km");
         Exercise e6 = new Exercise("Jog", "10 km");
-
         Exercise e7 = new Exercise("Stretches", "15 minutes");
-
         Exercise e8 = new Exercise("Swim", "500 m");
         Exercise e9 = new Exercise("Swim", "1 km");
         Exercise e10 = new Exercise("Swim", "5 km");
-
         Exercise e11 = new Exercise("Benchpress", "3x3");
         Exercise e12 = new Exercise("Benchpress", "4*4");
         Exercise e13 = new Exercise("Benchpress", "5*5");
-
         Exercise e14 = new Exercise("Squat", "3x3");
         Exercise e15 = new Exercise("Squat", "4*4");
         Exercise e16 = new Exercise("Squat", "5*5");
 
-
+        // Decide which exercises to show
         if(difficulty == "easy"){
             if(workoutType == "swim"){
                 list.add(e1); list.add(e8); list.add(e7);
