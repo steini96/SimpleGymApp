@@ -31,7 +31,7 @@ public class Exercise {
 
     @Override
     public String toString() {
-        return this.exerciseName + "  " + this.repetitions + " ferðir á " + this.duration;
+        return this.exerciseName + " " + this.duration;
     }
 
 
