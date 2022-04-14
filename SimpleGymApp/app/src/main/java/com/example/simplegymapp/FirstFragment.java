@@ -1,5 +1,6 @@
 package com.example.simplegymapp;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,14 @@ public class FirstFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
+        // Svona nær maður í difficulty
+        SharedPreferences sh = this.getActivity().getSharedPreferences("MySharedPref",0);
+        String difficulty = sh.getString("difficulty", "");
+
+        // Svona setur maður nýtt difficulty
+        SharedPreferences.Editor editor = sh.edit();
+        editor.putString("difficulty", "Hard");
+        editor.commit();
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -33,8 +42,6 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                NavHostFragment.findNavController(FirstFragment.this)
-//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
                 SecondFragment secondFragment = new SecondFragment ();
                 Bundle args = new Bundle();
                 args.putString("Lykill", "Skilaboð");

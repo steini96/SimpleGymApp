@@ -1,6 +1,7 @@
 package com.example.simplegymapp;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +37,9 @@ public class SecondFragment extends Fragment {
     ) {
         super.onCreate(savedInstanceState);
 
-
+        SharedPreferences sh = this.getActivity().getSharedPreferences("MySharedPref",0);
+        String diff = sh.getString("difficulty", "");
+        System.out.println(diff);
 
 
 
