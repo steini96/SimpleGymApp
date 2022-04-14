@@ -44,7 +44,7 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
                 SecondFragment secondFragment = new SecondFragment ();
                 Bundle args = new Bundle();
-                args.putString("Lykill", "Skilaboð");
+                args.putString("workoutType", "swim");
                 secondFragment.setArguments(args);
 
                 //Inflate the fragment
@@ -54,6 +54,7 @@ public class FirstFragment extends Fragment {
 
             }
         });
+
         binding.buttonUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
