@@ -20,4 +20,14 @@
     <string name="register">Register</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="swimming">SWIMMING</string>
+    <string name="running">RUNNING</string>
+    <string name="weightlifting">WEIGHTLIFTING</string>
+    <string name="change_workout_difficulty">Change Workout Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="change_workout_frequency">Change Workout Frequency</string>
+    <string name="change_password">Change Password</string>
+    <string name="change_email">Change email</string>
 </resources>

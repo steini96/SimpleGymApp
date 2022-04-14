@@ -19,6 +19,7 @@ import com.example.simplegymapp.Entities.UserFitnessInfo;
 import com.example.simplegymapp.Entities.Workout;
 import com.example.simplegymapp.Entities.WorkoutType;
 import com.example.simplegymapp.databinding.FragmentSecondBinding;
+import com.example.simplegymapp.databinding.UserinfoBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ import java.util.List;
 
 public class UserInfoFragment  extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private UserinfoBinding binding;
 
     // Array of strings...
     ListView simpleList;
@@ -42,7 +43,7 @@ public class UserInfoFragment  extends Fragment {
 
 
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = UserinfoBinding.inflate(inflater, container, false);
 
         return binding.getRoot();
 
