@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".UserInfoFragment">
 
@@ -37,21 +37,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="354dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
 
         <RadioButton
             android:id="@+id/radioButton6"
@@ -82,28 +80,26 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/change_workout_difficulty"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.77" />
+        android:hint="@string/change_workout_difficulty"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="236dp"
         android:layout_height="52dp"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="289dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="@string/change_workout_frequency"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/change_workout_frequency"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
@@ -111,11 +107,9 @@
         android:layout_width="80dp"
         android:layout_height="49dp"
         android:layout_marginTop="12dp"
-        android:layout_marginBottom="240dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,16 +123,16 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="267dp"
-        android:layout_marginBottom="186dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="@string/change_email"
         android:inputType="textPersonName"
         android:text="@string/change_email"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
@@ -146,11 +140,11 @@
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="14dp"
-        android:layout_marginBottom="117dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="@string/change_email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
+        android:textColorHint="#757575"
         app:layout_constraintEnd_toStartOf="@+id/button_second"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,17 +157,16 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="156dp"
-        android:layout_marginBottom="58dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="@string/change_password"
         android:inputType="textPersonName"
         android:text="@string/change_password"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintVertical_bias="1.0" />
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
@@ -182,8 +175,9 @@
         android:layout_marginStart="16dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="@string/change_password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
+        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
