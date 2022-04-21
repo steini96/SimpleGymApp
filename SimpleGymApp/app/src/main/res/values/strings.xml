@@ -30,4 +30,5 @@
     <string name="change_workout_frequency">Change Workout Frequency</string>
     <string name="change_password">Change Password</string>
     <string name="change_email">Change email</string>
+    <string name="change">Change</string>
 </resources>
