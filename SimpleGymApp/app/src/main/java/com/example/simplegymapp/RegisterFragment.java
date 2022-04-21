@@ -18,16 +18,17 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.simplegymapp.Entities.Exercise;
 import com.example.simplegymapp.Entities.Workout;
 import com.example.simplegymapp.databinding.FragmentLoginBinding;
+import com.example.simplegymapp.databinding.FragmentRegisterBinding;
 import com.example.simplegymapp.databinding.FragmentSecondBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class LoginFragment extends Fragment {
+public class RegisterFragment extends Fragment {
     private String email, password;
 
-    private FragmentLoginBinding binding;
+    private FragmentRegisterBinding binding;
     private SharedPreferences sh;
 
     @Override
@@ -36,7 +37,7 @@ public class LoginFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         this.sh = this.getActivity().getSharedPreferences("MySharedPref",0);
-        binding = FragmentLoginBinding.inflate(inflater, container, false);
+        binding = FragmentRegisterBinding.inflate(inflater, container, false);
 
         return binding.getRoot();
 
@@ -45,34 +46,20 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.button.setOnClickListener(new View.OnClickListener() {
+        binding.registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 EditText editEmail = (EditText) getView().findViewById(R.id.editTextTextEmailAddress);
                 email = editEmail.getText().toString();
                 EditText editPassword = (EditText) getView().findViewById(R.id.editTextTextPassword);
                 password = editPassword.getText().toString();
 
-                String realPassword = sh.getString(email, "");
-
-                if ( !realPassword.equals(password)  ) {
-                    System.out.println("Rangt password");
-                } else if (realPassword.equals(password)){
-                    NavHostFragment.findNavController(LoginFragment.this)
-                            .navigate(R.id.action_loginFragment_to_FirstFragment);
-                }
-
-
-            }
-        });
-
-        binding.button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Register takki
-
-                NavHostFragment.findNavController(LoginFragment.this)
-                        .navigate(R.id.action_loginFragment_to_RegisterFragment);
+                SharedPreferences.Editor myEdit = sh.edit();
+                myEdit.putString(email, password);
+                myEdit.commit();
+                    NavHostFragment.findNavController(RegisterFragment.this)
+                            .navigate(R.id.action_registerFragment_to_LoginFragment);
 
             }
         });

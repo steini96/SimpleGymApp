@@ -42,10 +42,22 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.simplegymapp.LoginFragment"
-        android:label="fragment_login"
+        android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_RegisterFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.simplegymapp.RegisterFragment"
+        android:label="@string/register_fragment_label"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_LoginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>
