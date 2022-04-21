@@ -1,6 +1,7 @@
 package com.example.simplegymapp;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,11 +34,11 @@ import java.util.List;
 public class UserInfoFragment  extends Fragment {
     private String email, password, workoutFreq;
     private Difficulty workoutDiff;
-    private  UserFitnessInfo userFitnessInfo1 = new UserFitnessInfo(2, WorkoutType.RUNNING, Difficulty.EASY);
-    private UserFitnessInfo userFitnessInfo2 = new UserFitnessInfo();
+    private SharedPreferences sh;
 
 
     private UserinfoBinding binding;
+
 
     // Array of strings...
     ListView simpleList;
@@ -48,9 +49,7 @@ public class UserInfoFragment  extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        super.onCreate(savedInstanceState);
-
-
+        this.sh = this.getActivity().getSharedPreferences("MySharedPref",0);
 
         binding = UserinfoBinding.inflate(inflater, container, false);
 
@@ -80,16 +79,7 @@ public class UserInfoFragment  extends Fragment {
 
 
 
-        simpleList = (ListView)getView().findViewById(R.id.simpleListView);
 
-        list.add(userFitnessInfo1);
-        Object[] exArray = list.toArray();
-
-        ArrayAdapter<UserFitnessInfo> arrayAdapter = new ArrayAdapter<UserFitnessInfo>(getActivity(), android.R.layout.simple_list_item_1, list);
-
-        // new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textView, android.R.layout.simple_list_item_1);
-
-        simpleList.setAdapter(arrayAdapter);
         binding.button3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -114,11 +104,27 @@ public class UserInfoFragment  extends Fragment {
                 Log.d("email", email);
                 Log.d("password", password);
                 Log.d("workoutFreq", workoutFreq);
-                Log.d("workoutDiff", "" + workoutDiff);
+                Log.d("workoutDiff",  "" + workoutDiff);
+
+                if(workoutDiff == null) workoutDiff =  workoutDiff.valueOf(sh.getString("difficulty", ""));
+                SharedPreferences.Editor editor = sh.edit();
+                editor.putString("difficulty","" + workoutDiff);
+                editor.commit();
+                Log.d("diff", sh.getString("difficulty", ""));
+
+
+                simpleList = (ListView)getView().findViewById(R.id.simpleListView);
+                UserFitnessInfo userFitnessInfo1 = new UserFitnessInfo(2, WorkoutType.RUNNING,workoutDiff.valueOf(sh.getString("difficulty", "")));
+                list.add(userFitnessInfo1);
+                Object[] exArray = list.toArray();
 
                 ArrayAdapter<UserFitnessInfo> arrayAdapter = new ArrayAdapter<UserFitnessInfo>(getActivity(), android.R.layout.simple_list_item_1, list);
-                NavHostFragment.findNavController(UserInfoFragment.this)
-                        .navigate(R.id.userInfo_to_first_fragment);
+
+                // new ArrayAdapter<String>(this, R.layout.activity_main, R.id.textView, android.R.layout.simple_list_item_1);
+
+                simpleList.setAdapter(arrayAdapter);
+
+                
             }
         });
 

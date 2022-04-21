@@ -59,7 +59,7 @@ public class UserFitnessInfo {
 
     @Override
     public String toString() {
-        return "Workout á viku: " + this.numWeeklyWrkOut+ "\n" + "Gerð á workout: " + this.workoutType + "\n" + "Erfiðleiki: " + this.difficulty;
+        return "Workout á viku: " + this.numWeeklyWrkOut+ "\n"  + "Erfiðleiki: " + this.difficulty;
     }
 
 
