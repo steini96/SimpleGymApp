@@ -32,7 +32,7 @@ import java.util.List;
 
 
 public class UserInfoFragment  extends Fragment {
-    private String email, password, workoutFreq;
+    private String email, password, workoutFreq = "0";
     private Difficulty workoutDiff;
     private SharedPreferences sh;
 
@@ -112,9 +112,11 @@ public class UserInfoFragment  extends Fragment {
                 editor.commit();
                 Log.d("diff", sh.getString("difficulty", ""));
 
-
+                if(workoutFreq.length() <1){
+                    workoutFreq = "0";
+                }
                 simpleList = (ListView)getView().findViewById(R.id.simpleListView);
-                UserFitnessInfo userFitnessInfo1 = new UserFitnessInfo(2, WorkoutType.RUNNING,workoutDiff.valueOf(sh.getString("difficulty", "")));
+                UserFitnessInfo userFitnessInfo1 = new UserFitnessInfo(Integer.parseInt(workoutFreq), WorkoutType.RUNNING,workoutDiff.valueOf(sh.getString("difficulty", "")));
                 list.add(userFitnessInfo1);
                 Object[] exArray = list.toArray();
 
@@ -124,7 +126,7 @@ public class UserInfoFragment  extends Fragment {
 
                 simpleList.setAdapter(arrayAdapter);
 
-                
+
             }
         });
 
